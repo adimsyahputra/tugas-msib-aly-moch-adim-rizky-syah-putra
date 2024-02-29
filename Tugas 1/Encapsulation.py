@@ -4,7 +4,6 @@ class Mobil:
         self.tahun_produksi = tahun_produksi
         self.warna = warna
 
-    # Getter untuk mendapatkan nilai property private
     def get_merk(self):
         return self.merk
 
@@ -14,7 +13,6 @@ class Mobil:
     def get_warna(self):
         return self.warna
 
-    # Setter untuk mengubah nilai property private
     def set_merk(self, merk):
         self.merk = merk
 
@@ -27,17 +25,14 @@ class Mobil:
 # Membuat objek Mobil
 mobil = Mobil("Toyota", 2020, "Merah")
 
-# Menggunakan getter untuk mendapatkan nilai property private
 print("Merk:", mobil.get_merk())
 print("Tahun Produksi:", mobil.get_tahun_produksi())
 print("Warna:", mobil.get_warna())
 
-# Menggunakan setter untuk mengubah nilai property private
 mobil.set_merk("Honda")
 mobil.set_tahun_produksi(2022)
 mobil.set_warna("Biru")
 
-# Menggunakan getter lagi untuk memastikan perubahan nilai property
 print("Merk:", mobil.get_merk())
 print("Tahun Produksi:", mobil.get_tahun_produksi())
 print("Warna:", mobil.get_warna())

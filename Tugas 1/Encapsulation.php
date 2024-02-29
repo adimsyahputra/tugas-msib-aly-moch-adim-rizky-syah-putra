@@ -12,7 +12,6 @@ class Mobil {
         $this->warna = $warna;
     }
 
-    // Getter untuk mendapatkan nilai property private
     public function getMerk() {
         return $this->merk;
     }
@@ -25,7 +24,6 @@ class Mobil {
         return $this->warna;
     }
 
-    // Setter untuk mengubah nilai property private
     public function setMerk($merk) {
         $this->merk = $merk;
     }
