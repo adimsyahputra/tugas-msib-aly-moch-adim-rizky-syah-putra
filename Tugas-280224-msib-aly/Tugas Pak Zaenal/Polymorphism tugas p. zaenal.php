@@ -2,7 +2,7 @@
 
 // Kelas dasar Mahasiswa
 class Mahasiswa {
-    public $nama;
+    protected $nama;
 
     public function __construct($nama) {
         $this->nama = $nama;
@@ -15,11 +15,15 @@ class Mahasiswa {
 
 // Kelas turunan DosenWali dari kelas Mahasiswa
 class DosenWali extends Mahasiswa {
-    public $kodeDosen;
+    protected $kodeDosen;
 
     public function __construct($nama, $kodeDosen) {
         parent::__construct($nama);
         $this->kodeDosen = $kodeDosen;
+    }
+
+    public function konsultasiDosenWali($dosen, $kampus) {
+        return "Mahasiswa {$this->nama} berkonsultasi dengan dosen wali bapak {$dosen} di kampus {$kampus}.";
     }
 
     public function urusKRS() {
@@ -31,7 +35,9 @@ class DosenWali extends Mahasiswa {
 $mahasiswa1 = new Mahasiswa("Moch. Adim Rizky Syah Putra");
 echo $mahasiswa1->konsultasiDosenWali("Khafidurrahman", "Politeknik Negeri Jember");
 
-$dosenWali1 = new DosenWali("Khafidurrahman", "DW101");
+$dosenWali1 = new DosenWali("Khafidurrahman", "DW001");
+echo "<br>";
+echo $dosenWali1->konsultasiDosenWali("Khafidurrahman", "Politeknik Negeri Jember");
 echo "<br>";
 echo $dosenWali1->urusKRS();
 ?>
