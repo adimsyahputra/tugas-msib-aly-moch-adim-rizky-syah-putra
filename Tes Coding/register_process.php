@@ -1,16 +1,14 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Handle registration (store username and password in database or file)
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if(isset($_POST['username'], $_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    // Example: Store in a file
-    $file = fopen("users.txt", "a");
-    fwrite($file, $username . ":" . $password . "\n");
-    fclose($file);
+    // Menyimpan data ke file users.txt
+    $data = "$username,$password" . PHP_EOL;
+    file_put_contents("users.txt", $data, FILE_APPEND);
 
-    // Redirect to login page
-    header("Location: index.php");
-    exit;
+    echo "Registration Successful!<br>";
+    echo "Username: $username<br>";
+    echo "Password: $password";
 }
 ?>
